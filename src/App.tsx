@@ -283,6 +283,58 @@ const INITIAL_PRODUCTS: Product[] = [
   }
 ];
 
+// ==================== INSTAGRAM STORY HIGHLIGHTS (@gattu_krishna_murthy_jewellers) ====================
+export const INSTAGRAM_HIGHLIGHTS = [
+  {
+    title: 'Necklaces',
+    badge: 'Chokers & Haars',
+    category: 'necklaces',
+    image: '/images/jewellery/gold-temple-necklace.jpg'
+  },
+  {
+    title: 'Earrings',
+    badge: 'Chandbalis & Studs',
+    category: 'earrings',
+    image: '/images/jewellery/cat-earrings.jpg'
+  },
+  {
+    title: 'Beads Jewellery',
+    badge: 'Guttapusalu & Beads',
+    category: 'necklaces',
+    image: '/images/jewellery/cat-mangalsutras.jpg'
+  },
+  {
+    title: 'Kids Collection',
+    badge: 'Kadas & Chains',
+    category: 'all',
+    image: '/images/jewellery/cat-bracelets.jpg'
+  },
+  {
+    title: 'Jhumkas 916',
+    badge: 'Hallmarked 916',
+    category: 'earrings',
+    image: '/images/jewellery/gold-jhumka-earrings.jpg'
+  },
+  {
+    title: '916 Rings',
+    badge: 'Bridal & Daily',
+    category: 'rings',
+    image: '/images/jewellery/gold-ring-mens-womens.jpg'
+  },
+  {
+    title: 'Nose Pins',
+    badge: 'Gold & Diamond',
+    category: 'earrings',
+    image: '/images/jewellery/prod-solitaire-1.jpg'
+  },
+  {
+    title: '@gksilver',
+    badge: 'Pooja Articles',
+    category: 'silver',
+    image: '/images/jewellery/silver-pooja-diya-set.jpg'
+  }
+];
+
 const HERO_SLIDES = [
   {
     id: 1,
@@ -1368,11 +1420,11 @@ export default function App() {
               <div className="space-y-3 text-xs">
                 <div>
                   <label className="font-semibold block mb-1">Flagship Address</label>
-                  <input type="text" defaultValue="16-1-524/3 & 4, Saidabad Main Road, Hyderabad - 500059" className="w-full px-4 py-2 border rounded-xl" />
+                  <input type="text" defaultValue="Paripally Street / Kaman Road, Siddipet, Telangana - 502103" className="w-full px-4 py-2 border rounded-xl" />
                 </div>
                 <div>
-                  <label className="font-semibold block mb-1">WhatsApp Direct Line</label>
-                  <input type="text" defaultValue="+91 91777 75151" className="w-full px-4 py-2 border rounded-xl" />
+                  <label className="font-semibold block mb-1">WhatsApp &amp; Concierge Direct Line</label>
+                  <input type="text" defaultValue="+91 90300 33552" className="w-full px-4 py-2 border rounded-xl" />
                 </div>
                 <button
                   onClick={() => showToast('Store settings updated.')}
@@ -1392,33 +1444,54 @@ export default function App() {
   return (
     <div className="min-h-screen bg-indriya-peach text-charcoal-900 flex flex-col font-sans selection:bg-indriya-gold selection:text-white">
       
-      {/* 1. TOP ANNOUNCEMENT BAR WITH INDRIYA COLLAPSE TOGGLE */}
+      {/* 1. TOP ANNOUNCEMENT BAR WITH INSTAGRAM DETAILS & DIRECT CALL */}
       {isAnnouncementVisible && (
-        <div className="bg-[#0A2240] text-white py-2.5 px-4 text-xs font-medium border-b border-indriya-gold/30 relative">
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex-1 text-center font-normal tracking-wide text-xs sm:text-sm text-gray-100">
-              Get upto 30% off on gold jewellery making charges, saving upto ₹ 1001/gm
+        <div className="bg-[#07281f] text-white py-2 px-3 sm:px-4 text-xs font-medium border-b border-indriya-gold/40 relative shadow-inner">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 text-center sm:text-left">
+            <div className="flex-1 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-amber-100/90">
+              <span className="font-bold text-indriya-lightgold flex items-center gap-1 tracking-wider uppercase">
+                <span>✦</span> GATTU KRISHNA MURTHY JEWELLERS (ESTD. 1958)
+              </span>
+              <span className="hidden sm:inline text-amber-400/50">•</span>
+              <span className="hidden md:inline text-gray-200">100% BIS Hallmarked Gold • Custom Bridal Designs • Siddipet</span>
+              <span className="hidden sm:inline text-amber-400/50">•</span>
+              <a
+                href="tel:+919030033552"
+                className="inline-flex items-center gap-1 font-bold text-amber-200 bg-amber-500/20 hover:bg-amber-500/30 px-2.5 py-0.5 rounded-full border border-amber-400/40 transition-colors shadow-sm"
+              >
+                <Phone className="w-3 h-3 text-amber-300" />
+                <span>Call 9030033552</span>
+              </a>
+              <span className="hidden lg:inline text-amber-400/50">•</span>
+              <a
+                href="https://www.instagram.com/gattu_krishna_murthy_jewellers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden lg:inline-flex items-center gap-1 text-amber-300 hover:text-white underline underline-offset-2"
+              >
+                <span>@gattu_krishna_murthy_jewellers</span>
+              </a>
             </div>
             <button
               onClick={() => setIsAnnouncementVisible(false)}
-              className="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors flex-shrink-0"
+              className="text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors flex-shrink-0"
               title="Close announcement bar"
               aria-label="Close announcement bar"
             >
-              <X className="w-4 h-4" />
+              <X className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
       )}
 
-      {/* 2. LUXURY STICKY NAVBAR (CLEAN MOBILE VISION + CLICKABLE MEGA MENU) */}
+      {/* 2. LUXURY STICKY NAVBAR (PROMINENTLY HIGHLIGHTED LOGO & BRAND IDENTITY) */}
       <header className="sticky top-0 z-40 bg-[#FAF7F2] border-b border-indriya-gold/30 shadow-sm">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           
           {/* Main Top Header Bar */}
-          <div className="flex items-center justify-between h-16 sm:h-20">
+          <div className="flex items-center justify-between h-18 sm:h-22 py-1.5">
             
-            {/* Left Section: Mobile Hamburger Toggle + Brand Identity */}
+            {/* Left Section: Mobile Hamburger Toggle + Prominently Highlighted Brand Logo */}
             <div className="flex items-center gap-2 sm:gap-3.5">
               {/* Mobile Hamburger Menu Button (Left Side) */}
               <button
@@ -1430,23 +1503,38 @@ export default function App() {
                 <Menu className="w-6 h-6" />
               </button>
 
-              {/* Official Brand Logo & Name */}
+              {/* Official Brand Logo & Name - HIGHLIGHTED LUXURY SEAL */}
               <div
-                className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group"
+                className="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer group"
                 onClick={() => navigateTo('home')}
+                title="Gattu Krishna Murthy Jewellers (Estd. 1958) - Siddipet"
               >
-                <img
-                  src="/logo.jpg"
-                  alt="Gattu Krishna Murthy Jewellers Logo"
-                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-xl shadow-sm border border-indriya-gold/50 bg-[#07281f] p-0.5 group-hover:scale-105 transition-transform"
-                />
+                {/* Logo with Royal Golden Aura Glow & Hallmark Badge */}
+                <div className="relative shrink-0">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 rounded-2xl blur-[3px] opacity-70 group-hover:opacity-100 transition duration-300 group-hover:scale-105"></div>
+                  <img
+                    src="/logo.jpg"
+                    alt="Gattu Krishna Murthy Jewellers Official Logo"
+                    className="relative w-11 h-11 sm:w-14 sm:h-14 object-contain rounded-2xl ring-2 ring-indriya-gold bg-[#07281f] p-1 shadow-md transform group-hover:scale-105 transition-all duration-300"
+                  />
+                  <span className="absolute -bottom-1 -right-1 bg-amber-500 text-[8px] font-extrabold text-white px-1 py-0.2 rounded-full border border-white shadow-sm font-sans tracking-tight">
+                    916
+                  </span>
+                </div>
                 <div>
-                  <span className="font-serif text-sm sm:text-xl md:text-2xl font-bold text-indriya-navy tracking-wider block leading-tight">
-                    GATTU KRISHNA MURTHY
-                  </span>
-                  <span className="text-[7.5px] sm:text-[9.5px] font-sans tracking-[0.22em] text-indriya-crimson font-bold uppercase block mt-0.5">
-                    JEWELLERS • ESTD 1958
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-serif text-sm sm:text-xl md:text-2xl font-extrabold text-indriya-navy tracking-wider block leading-tight">
+                      GATTU KRISHNA MURTHY
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="text-[7.5px] sm:text-[9.5px] font-sans tracking-[0.25em] text-indriya-crimson font-extrabold uppercase block">
+                      JEWELLERS • SIDDIPET • ESTD 1958
+                    </span>
+                    <span className="hidden lg:inline-block text-[8px] font-bold text-amber-800 bg-amber-100/90 px-1.5 py-0.5 rounded border border-amber-300 tracking-wider uppercase">
+                      100% HALLMARKED
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1491,7 +1579,7 @@ export default function App() {
               <button
                 onClick={() => navigateTo('store')}
                 className="hidden sm:flex items-center gap-1 text-xs font-bold text-indriya-navy hover:text-indriya-crimson transition-colors"
-                title="Saidabad Flagship"
+                title="Siddipet Flagship Showroom"
               >
                 <MapPin className="w-4 h-4 text-indriya-crimson" />
                 <span>Store</span>
@@ -2049,19 +2137,19 @@ export default function App() {
                     <span className="text-[11px] font-bold text-indriya-crimson tracking-wider uppercase block mb-3">SERVICES &amp; SCHEMES</span>
                     <div className="space-y-2 text-xs text-charcoal-700">
                       <div onClick={() => { navigateTo('golden-programs'); setActiveMegaMenu(null); }} className="hover:text-indriya-crimson cursor-pointer font-semibold text-indriya-crimson">Golden Programs (11+1 Plan)</div>
-                      <div onClick={() => { setIsTodayGoldRateOpen(true); setActiveMegaMenu(null); }} className="hover:text-indriya-crimson cursor-pointer">Today's Live Hyderabad Gold Rate</div>
+                      <div onClick={() => { setIsTodayGoldRateOpen(true); setActiveMegaMenu(null); }} className="hover:text-indriya-crimson cursor-pointer">Today's Live Gold Rate</div>
                       <div onClick={() => { navigateTo('store'); setActiveMegaMenu(null); }} className="hover:text-indriya-crimson cursor-pointer">Book VIP Showroom Appointment</div>
                     </div>
                   </div>
 
                   <div className="col-span-4">
-                    <span className="text-[11px] font-bold text-indriya-crimson tracking-wider uppercase block mb-3">FLAGSHIP ATELIER</span>
+                    <span className="text-[11px] font-bold text-indriya-crimson tracking-wider uppercase block mb-3">FLAGSHIP SHOWROOM</span>
                     <p className="text-xs text-charcoal-700 leading-relaxed mb-3">
-                      16-1-524/3 &amp; 4, Saidabad Main Road, Hyderabad - 500059<br />
-                      Telangana, India
+                      Paripally Street / Kaman Road, Siddipet - 502103<br />
+                      Telangana, India • Call: +91 90300 33552
                     </p>
                     <button onClick={() => { navigateTo('store'); setActiveMegaMenu(null); }} className="text-xs font-bold text-indriya-crimson hover:underline">
-                      View Store Directions â†’
+                      View Store Directions →
                     </button>
                   </div>
                 </div>
@@ -2297,7 +2385,7 @@ export default function App() {
               >
                 <span className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-indriya-crimson" />
-                  <span>Saidabad Flagship Showroom</span>
+                  <span>Siddipet Flagship Showroom</span>
                 </span>
                 <ArrowRight className="w-3.5 h-3.5 text-gray-400" />
               </button>
@@ -2368,6 +2456,12 @@ export default function App() {
             {/* Desktop Compact Semi-Transparent Card (Reduced size, smaller text, subtle luxury transparency) */}
             <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 w-full flex justify-end py-8">
               <div className="w-full max-w-md lg:max-w-lg bg-white/85 backdrop-blur-md p-6 lg:p-7 rounded-2xl border border-indriya-gold/50 shadow-xl text-right transition-all">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#07281f] text-white border border-indriya-gold/60 shadow-sm mb-2">
+                  <img src="/logo.jpg" alt="GKJ" className="w-4 h-4 rounded-md object-contain" />
+                  <span className="text-[9px] font-sans font-extrabold tracking-widest text-indriya-lightgold uppercase">
+                    Gattu Krishna Murthy Jewellers • Estd 1958
+                  </span>
+                </div>
                 <span className="text-[10px] font-sans tracking-[0.25em] text-indriya-crimson font-bold uppercase block mb-1">
                   {HERO_SLIDES[heroSlideIndex % HERO_SLIDES.length].subtitle}
                 </span>
@@ -2442,6 +2536,12 @@ export default function App() {
 
               {/* Mobile Compact Semi-Transparent Details Card (Reduced Size & Text) */}
               <div className="p-3.5 bg-white/90 backdrop-blur-md text-center border-t border-indriya-gold/20">
+                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#07281f] text-white border border-indriya-gold/60 shadow-sm mb-1.5">
+                  <img src="/logo.jpg" alt="GKJ" className="w-3.5 h-3.5 rounded-md object-contain" />
+                  <span className="text-[8px] font-sans font-extrabold tracking-widest text-indriya-lightgold uppercase">
+                    Gattu Krishna Murthy Jewellers • Estd 1958
+                  </span>
+                </div>
                 <span className="text-[9px] font-sans tracking-[0.2em] text-indriya-crimson font-bold uppercase block mb-0.5">
                   {HERO_SLIDES[heroSlideIndex % HERO_SLIDES.length].subtitle}
                 </span>
@@ -2480,13 +2580,74 @@ export default function App() {
         </section>
       )}
 
-      {/* 4. THE SAI PROMISES (INDRIYA PROMISES 3-COLUMN BANNER) */}
+      {/* ================= INSTAGRAM STORY HIGHLIGHTS BAR (@gattu_krishna_murthy_jewellers) ================= */}
+      {currentPage === 'home' && (
+        <section className="bg-white border-b border-indriya-gold/30 py-4 px-3 sm:px-6 shadow-sm overflow-hidden select-none">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between mb-3 px-1">
+              <div className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></div>
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-indriya-navy font-serif">
+                  Instagram Highlights &amp; Trending Stories
+                </span>
+                <span className="text-[10px] text-gray-500 font-sans hidden sm:inline">
+                  (@gattu_krishna_murthy_jewellers)
+                </span>
+              </div>
+              <a
+                href="https://www.instagram.com/gattu_krishna_murthy_jewellers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-bold text-rose-600 hover:text-rose-700 flex items-center gap-1 group"
+              >
+                <span>Follow on Instagram</span>
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
+
+            {/* Scrollable Highlight Story Circles */}
+            <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto pb-2 pt-1 scrollbar-none text-center">
+              {INSTAGRAM_HIGHLIGHTS.map((item, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => {
+                    navigateTo('category', item.category);
+                  }}
+                  className="flex flex-col items-center flex-shrink-0 cursor-pointer group"
+                >
+                  {/* Rainbow Instagram story gradient border */}
+                  <div className="p-[2.5px] rounded-full bg-gradient-to-tr from-amber-400 via-rose-500 to-fuchsia-600 shadow-md group-hover:scale-108 transition-transform duration-300">
+                    <div className="p-0.5 bg-white rounded-full">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-13 h-13 sm:w-16 sm:h-16 rounded-full object-cover group-hover:opacity-90 transition-opacity"
+                      />
+                    </div>
+                  </div>
+                  <span className="text-[11px] sm:text-xs font-semibold text-gray-800 mt-1.5 group-hover:text-indriya-crimson transition-colors whitespace-nowrap">
+                    {item.title}
+                  </span>
+                  <span className="text-[9px] text-gray-400 font-sans -mt-0.5">
+                    {item.badge}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 4. THE GKJ PROMISES (SIDDIPET'S MOST TRUSTED JEWELLERY STORE SINCE 1958) */}
       {currentPage === 'home' && (
         <section className="bg-[#FAF7F2] py-14 border-b border-indriya-gold/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-serif italic text-3xl sm:text-4xl text-indriya-navy mb-10">
-              The Sai Promises
+            <h2 className="font-serif italic text-3xl sm:text-4xl text-indriya-navy mb-2">
+              The GKJ Promises
             </h2>
+            <p className="text-xs text-indriya-crimson tracking-widest uppercase font-bold mb-10">
+              Siddipet's Most Trusted Gold Showroom Since 1958
+            </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 text-center">
               {/* Promise 1 */}
@@ -2495,10 +2656,10 @@ export default function App() {
                   <ShieldCheck className="w-8 h-8 text-indriya-crimson stroke-[1.5]" />
                 </div>
                 <h3 className="font-serif font-bold text-lg text-indriya-navy mb-2">
-                  Trusted &amp; Certified Jewellery
+                  100% BIS Hallmarked Purity
                 </h3>
                 <p className="text-xs text-charcoal-700 leading-relaxed max-w-xs">
-                  Crafted with the trust and reliability of Sai Jewellers, we use 100% BIS Hallmarked gold and certified natural diamonds.
+                  Crafted with 68 years of family trust at Gattu Krishna Murthy Jewellers. Every single article carries 100% BIS 916 Hallmark certification with laser HUID.
                 </p>
               </div>
 
@@ -2869,50 +3030,69 @@ export default function App() {
         </section>
       )}
 
-      {/* 10. 35 YEARS OF NIZAM & DECCAN CRAFTSMANSHIP */}
+      {/* 10. 68+ YEARS OF GENERATIONAL TRUST & CRAFTSMANSHIP IN SIDDIPET */}
       {currentPage === 'home' && (
         <section className="bg-white py-16 border-b border-indriya-gold/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-[11px] font-sans tracking-[0.25em] text-indriya-crimson font-bold uppercase block mb-1">HERITAGE ATELIER</span>
+              <span className="text-[11px] font-sans tracking-[0.25em] text-indriya-crimson font-bold uppercase block mb-1">
+                ESTD. 1958 • SIDDIPET
+              </span>
               <h2 className="text-3xl sm:text-4xl font-serif font-bold text-indriya-navy mt-1">
-                35 Years of Nizam &amp; Deccan Craftsmanship
+                68+ Years of Generational Trust &amp; Goldsmithing
               </h2>
               <div className="w-16 h-0.5 bg-indriya-gold mt-3 mb-6" />
               <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed mb-4">
-                Founded in Saidabad, Hyderabad, Sai Jewellers preserves the sacred kaarigari traditions of royal Deccan courts. From hand-chiseled Goddess Lakshmi Kasu Malais to intricate Guttapusalu pearls, our creations blend ancient spiritual artistry with modern hallmarked purity.
+                Established in 1958 in Siddipet, Gattu Krishna Murthy Jewellers (GKJ) has been the cornerstone of pure gold artistry and family trust for over 68 years. Renowned for custom bridal designs, sacred temple haars, and delicate beads jewellery, every creation reflects meticulous Telugu goldsmithing.
               </p>
               <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed mb-8">
-                Every single gram of gold carries 100% BIS 916 Hallmark certification with laser-inscribed HUID numbers, ensuring your family heirlooms retain unquestioned generational value.
+                Every single ornament carries 100% BIS 916 Hallmark certification with unique laser-inscribed HUID numbers, backed by our sister boutique @gksilver for fine 925 sterling silver pooja articles.
               </p>
               <div className="grid grid-cols-3 gap-6 pt-2 border-t border-gray-100">
                 <div>
-                  <h4 className="font-serif font-bold text-2xl text-indriya-navy">35+</h4>
-                  <p className="text-xs text-gray-500">Years of Royal Trust</p>
-                </div>
-                <div>
-                  <h4 className="font-serif font-bold text-2xl text-indriya-navy">16,000+</h4>
-                  <p className="text-xs text-gray-500">Unique Designs</p>
+                  <h4 className="font-serif font-bold text-2xl text-indriya-navy">68+</h4>
+                  <p className="text-xs text-gray-500">Years of Generational Trust</p>
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-2xl text-indriya-navy">100%</h4>
-                  <p className="text-xs text-gray-500">BIS HUID Hallmarked</p>
+                  <p className="text-xs text-gray-500">BIS 916 Hallmarked</p>
+                </div>
+                <div>
+                  <h4 className="font-serif font-bold text-2xl text-indriya-navy">Custom</h4>
+                  <p className="text-xs text-gray-500">Bridal &amp; Beads Jewellery</p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-indriya-gold/40">
+            <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-indriya-gold/40 relative group">
               <img
                 src="/images/jewellery/craftsmanship-goldsmith.jpg"
-                alt="Master Goldsmith Bench"
-                className="w-full h-[400px] object-cover"
+                alt="Gattu Krishna Murthy Jewellers Goldsmith Bench"
+                className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
+              <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-md p-3.5 rounded-2xl border border-indriya-gold/40 text-white flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <img src="/logo.jpg" alt="GKJ" className="w-9 h-9 rounded-xl object-contain bg-[#07281f] p-0.5 border border-indriya-gold" />
+                  <div>
+                    <span className="font-serif font-bold text-xs text-indriya-lightgold block">Gattu Krishna Murthy Jewellers</span>
+                    <span className="text-[10px] text-gray-300">Trusted Jewellery Store in Town • Siddipet</span>
+                  </div>
+                </div>
+                <a
+                  href="https://www.instagram.com/gattu_krishna_murthy_jewellers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 bg-amber-500 hover:bg-amber-600 text-white text-[10px] font-bold uppercase rounded-lg shadow"
+                >
+                  Instagram
+                </a>
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* 11. SAIDABAD FLAGSHIP ATELIER & VIP EXPERIENCE */}
+      {/* 11. SIDDIPET FLAGSHIP SHOWROOM & VIP EXPERIENCE */}
       {currentPage === 'home' && (
         <section className="py-14 bg-[#FAF7F2] border-b border-indriya-gold/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -2921,28 +3101,44 @@ export default function App() {
                 FLAGSHIP SHOWROOM
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-indriya-navy leading-tight">
-                Visit Our Saidabad Atelier in Hyderabad
+                Visit Our Grand Showroom in Siddipet
               </h2>
               <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed">
-                Step into our grand 4-story luxury atelier in Saidabad. Experience private bridal viewing suites, try on bespoke heritage chokers, and consult directly with our master goldsmiths.
+                Step into our trusted showroom in Siddipet. Explore exclusive bridal chokers, custom guttapusalu haars, 916 jhumkas, and sacred 925 silver pooja articles at our sister brand @gksilver.
               </p>
               
               <div className="space-y-2 text-xs text-gray-700 pt-1">
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-indriya-crimson shrink-0 mt-0.5" />
-                  <span>16-1-524/3 &amp; 4, Saidabad Main Road, Hyderabad - 500059, Telangana</span>
+                  <span>Paripally Street / Kaman Road, Siddipet - 502103, Telangana</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Clock className="w-4 h-4 text-indriya-gold shrink-0" />
-                  <span>Open Daily: 10:30 AM – 9:00 PM (Valet Parking Available)</span>
+                  <span>Open Daily: 10:30 AM – 9:00 PM (Monday to Sunday)</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Phone className="w-4 h-4 text-indriya-navy shrink-0" />
-                  <span>Concierge Direct: +91 91777 75151 / +91 40 2459 9999</span>
+                  <span>Concierge Direct: +91 90300 33552</span>
                 </div>
               </div>
 
               <div className="pt-3 flex flex-wrap gap-3">
+                <a
+                  href="tel:+919030033552"
+                  className="px-6 py-3 bg-[#E05326] hover:bg-[#C8451B] text-white rounded-full text-xs font-bold tracking-widest uppercase shadow-md flex items-center gap-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call 9030033552</span>
+                </a>
+                <a
+                  href="https://wa.me/919030033552?text=Hello%20Gattu%20Krishna%20Murthy%20Jewellers,%20I%20would%20like%20to%20inquire%20about%20your%20gold%20jewellery%20collection."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-bold tracking-widest uppercase shadow-md flex items-center gap-2"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  <span>WhatsApp Video</span>
+                </a>
                 <button
                   onClick={() => setIsAppointmentOpen(true)}
                   className="px-6 py-3 bg-indriya-navy hover:bg-[#07192f] text-indriya-lightgold rounded-full text-xs font-bold tracking-widest uppercase shadow-md flex items-center gap-2"
@@ -2963,7 +3159,7 @@ export default function App() {
             <div className="rounded-3xl overflow-hidden shadow-2xl border-2 border-indriya-gold/40">
               <img
                 src="/images/jewellery/about-heritage.jpg"
-                alt="Sai Jewellers Saidabad Flagship Atelier"
+                alt="Gattu Krishna Murthy Jewellers Siddipet Showroom"
                 className="w-full h-[360px] sm:h-[400px] object-cover"
               />
             </div>
@@ -2998,9 +3194,9 @@ export default function App() {
                   item: "Royal Padmika Bridal Trousseau"
                 },
                 {
-                  quote: "We joined the 11+1 Golden Program. Paying monthly installments for 11 months with the 12th month bonus on Sai Jewellers made buying our diamond solitaire engagement ring effortless.",
+                  quote: "We joined the 11+1 Golden Program. Paying monthly installments for 11 months with the 12th month bonus on Gattu Krishna Murthy Jewellers made buying our diamond solitaire engagement ring effortless.",
                   author: "Rajesh & Priya Vuppala",
-                  location: "Saidabad, Hyderabad",
+                  location: "Siddipet, Telangana",
                   item: "Certified Solitaire Diamond Ring"
                 }
               ].map((test, idx) => (
@@ -3042,7 +3238,7 @@ export default function App() {
               </h2>
               <div className="w-16 h-0.5 bg-indriya-gold mx-auto mt-3 mb-2" />
               <p className="text-xs sm:text-sm text-charcoal-700">
-                Everything you need to know about purchasing fine gold and certified diamond jewellery at Sai Jewellers.
+                Everything you need to know about purchasing fine gold and certified jewellery at Gattu Krishna Murthy Jewellers.
               </p>
             </div>
 
@@ -3050,23 +3246,23 @@ export default function App() {
               {[
                 {
                   q: "What is BIS 916 Hallmark and HUID, and is it available on every piece?",
-                  a: "Yes. Every single piece of gold jewellery at Sai Jewellers is 100% BIS Hallmarked and carries a unique 6-digit laser-inscribed Hallmark Unique Identification (HUID) number mandated by the Bureau of Indian Standards. You can verify this number instantly on the official BIS Care App."
+                  a: "Yes. Every single piece of gold jewellery at Gattu Krishna Murthy Jewellers is 100% BIS Hallmarked and carries a unique 6-digit laser-inscribed Hallmark Unique Identification (HUID) number mandated by the Bureau of Indian Standards. You can verify this number instantly on the official BIS Care App."
                 },
                 {
-                  q: "How are today's live gold rates calculated on Sai Jewellers?",
-                  a: "Our rates are benchmarked directly against the India Bullion and Jewellers Association (IBJA) Hyderabad market rates, updated live daily at 12:00 PM IST. We maintain transparent pricing with a clear itemized breakup of pure metal value, making charges, and 3% GST."
+                  q: "How are today's live gold rates calculated?",
+                  a: "Our rates are benchmarked directly against live Telangana gold bullion market rates, updated live daily at 12:00 PM IST. We maintain transparent pricing with a clear itemized breakup of pure metal value, making charges, and 3% GST."
                 },
                 {
                   q: "How does the 0% Old Gold Exchange work on any karat?",
-                  a: "Bring your old jewellery (from any jeweller) to our Saidabad showroom. We test the purity in front of you using calibrated non-destructive German XRF Karatmeters without any melting loss. 100% of the tested pure gold value is credited towards your new purchase with zero deduction."
+                  a: "Bring your old jewellery (from any jeweller) to our Siddipet showroom. We test the purity in front of you using calibrated non-destructive German XRF Karatmeters without any melting loss. 100% of the tested pure gold value is credited towards your new purchase with zero deduction."
                 },
                 {
                   q: "Are the solitaire diamonds natural and certified?",
-                  a: "All diamonds sold by Sai Jewellers are 100% natural, ethically mined, and certified by renowned gemological laboratories such as IGI (International Gemological Institute) and SGL, complete with unique laser-inscribed certificates."
+                  a: "All diamonds sold by Gattu Krishna Murthy Jewellers are 100% natural, ethically mined, and certified by renowned gemological laboratories such as IGI (International Gemological Institute) and SGL, complete with unique laser-inscribed certificates."
                 },
                 {
-                  q: "How can I book a VIP appointment at the Saidabad showroom?",
-                  a: "You can click 'Book VIP Showroom Visit' anywhere on our website, select your preferred date and time, and our VIP concierge team will confirm your private bridal suite and prepare curated selections in advance."
+                  q: "How can I book a VIP appointment at the Siddipet showroom?",
+                  a: "You can click 'Book VIP Showroom Visit' anywhere on our website or call +91 90300 33552, select your preferred date and time, and our VIP concierge team will confirm your private bridal suite and prepare curated selections in advance."
                 }
               ].map((faq, idx) => (
                 <div
@@ -3376,7 +3572,7 @@ export default function App() {
                   className="w-full py-3 rounded-2xl border-2 border-indriya-gold text-indriya-navy hover:bg-[#FAF7F2] text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2"
                 >
                   <MapPin className="w-4 h-4 text-indriya-crimson" />
-                  <span>Book VIP Viewing at Saidabad Flagship</span>
+                  <span>Book VIP Viewing at Siddipet Flagship</span>
                 </button>
               </div>
 
@@ -3569,9 +3765,9 @@ export default function App() {
                   HAUTE JOAILLERIE FLAGSHIP
                 </span>
                 <h1 className="font-serif text-3xl font-bold text-indriya-navy leading-tight">
-                  Saidabad Flagship Showroom
+                  Siddipet Flagship Showroom
                 </h1>
-                <p className="text-xs text-gray-500 mt-1">35 Years of Royal Nizam & Deccan Goldsmithing in Hyderabad</p>
+                <p className="text-xs text-gray-500 mt-1">68+ Years of Generational Trust in Siddipet • Estd. 1958</p>
               </div>
 
               <div className="space-y-4 text-xs">
@@ -3580,9 +3776,9 @@ export default function App() {
                   <div>
                     <strong className="text-indriya-navy block text-sm">Showroom Address:</strong>
                     <p className="text-gray-700 mt-0.5 leading-relaxed">
-                      Sai Jewellers Haute Joaillerie, D.No: 17-1-391/T/2, Near Saidabad Cross Roads, Main Road, Saidabad, Hyderabad, Telangana 500059
+                      Gattu Krishna Murthy Jewellers, Paripally Street / Kaman Road, Siddipet, Telangana 502103
                     </p>
-                    <span className="text-gray-500 block mt-1">Landmark: Opposite Vijaya Diagnostic Centre / Near Pillar 140</span>
+                    <span className="text-gray-500 block mt-1">Landmark: Paripally Street / Kaman Road area • Sister boutique @gksilver</span>
                   </div>
                 </div>
 
@@ -3594,8 +3790,8 @@ export default function App() {
                   </div>
                   <div className="p-4 bg-[#FAF7F2] rounded-2xl border border-gray-100">
                     <span className="font-bold text-indriya-navy block mb-1">Direct Telephones</span>
-                    <p className="text-gray-600">+91 98490 23456</p>
-                    <p className="text-gray-600">+91 40 2456 7890</p>
+                    <a href="tel:+919030033552" className="text-gray-900 font-bold hover:underline block">+91 90300 33552</a>
+                    <a href="https://wa.me/919030033552" target="_blank" rel="noreferrer" className="text-green-600 font-semibold hover:underline block">WhatsApp Available</a>
                   </div>
                 </div>
 
@@ -3873,40 +4069,67 @@ export default function App() {
         )
       )}
 
-      {/* 8. LUXURY FOOTER */}
-      <footer className="bg-[#0A2240] text-white pt-16 pb-12 border-t-2 border-indriya-gold/40">
+      {/* 8. LUXURY FOOTER (WITH HIGHLIGHTED LOGO & INSTAGRAM BIO) */}
+      <footer className="bg-[#07192f] text-white pt-16 pb-12 border-t-2 border-indriya-gold/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <img
-                  src="/logo.jpg"
-                  alt="Gattu Krishna Murthy Jewellers Logo"
-                  className="w-12 h-12 object-contain rounded-xl border border-indriya-gold/50 bg-[#07281f] p-0.5"
-                />
+              {/* Highlighted Brand Logo with Double Gold Halo Ring */}
+              <div className="flex items-center gap-3.5 mb-4">
+                <div className="relative shrink-0">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-yellow-200 to-amber-500 rounded-2xl blur-sm opacity-80"></div>
+                  <img
+                    src="/logo.jpg"
+                    alt="Gattu Krishna Murthy Jewellers Official Logo"
+                    className="relative w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-2xl ring-2 ring-indriya-gold bg-[#07281f] p-1 shadow-2xl"
+                  />
+                  <span className="absolute -bottom-1 -right-1 bg-amber-500 text-[8px] font-extrabold text-white px-1.5 py-0.2 rounded-full border border-white shadow-sm font-sans tracking-tight">
+                    916
+                  </span>
+                </div>
                 <div>
-                  <span className="font-serif text-xl sm:text-2xl font-bold text-indriya-lightgold tracking-wider block">
+                  <span className="font-serif text-xl sm:text-2xl font-black text-indriya-lightgold tracking-wider block leading-tight">
                     GATTU KRISHNA MURTHY
                   </span>
-                  <span className="text-[9px] font-sans tracking-[0.22em] text-indriya-gold font-bold uppercase block">
-                    JEWELLERS • ESTD 1958
+                  <span className="text-[9px] font-sans tracking-[0.25em] text-amber-400 font-extrabold uppercase block mt-0.5">
+                    JEWELLERS • SIDDIPET • ESTD 1958
                   </span>
                 </div>
               </div>
-              <p className="text-xs text-gray-300 mt-2 leading-relaxed">
-                Purveyors of certified 22KT gold heirloom jewellery, bridal kadas, syndicate polki diamonds, and fine 925 sterling silver artifacts.
-              </p>
-              <div className="mt-3 space-y-1.5 text-xs text-indriya-gold">
-                <p className="font-semibold">
-                  Flagship Showroom: Siddipet (Paripally Street / Kaman Road), Telangana
+
+              {/* Exact Instagram Bio Box */}
+              <div className="p-3 rounded-xl bg-white/5 border border-indriya-gold/30 text-xs text-amber-100/90 leading-relaxed italic mb-3">
+                "Gold Jewellery Siddipet | Hallmarked Gold | Custom Designs | Bridal Collection | Call 9030033552 | Visit @gksilver | Trusted Jewellery Store in Town!!"
+              </div>
+
+              <div className="space-y-1.5 text-xs text-gray-300">
+                <p className="flex items-start gap-1.5 text-amber-300 font-semibold">
+                  <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <span>Paripally Street / Kaman Road, Siddipet, Telangana - 502103</span>
                 </p>
+                <p className="flex items-center gap-1.5 text-amber-300 font-semibold">
+                  <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                  <a href="tel:+919030033552" className="hover:underline">Direct: +91 90300 33552</a>
+                </p>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2 text-xs">
                 <a
                   href="https://www.instagram.com/gattu_krishna_murthy_jewellers/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-indriya-lightgold hover:text-white underline underline-offset-4 transition-colors"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-gradient-to-r from-amber-500/20 to-rose-500/20 hover:from-amber-500/30 hover:to-rose-500/30 border border-amber-400/40 text-amber-200 transition-all font-semibold"
                 >
-                  <span>Follow @gattu_krishna_murthy_jewellers on Instagram</span>
+                  <span>@gattu_krishna_murthy_jewellers</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/gksilver/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-gray-200 transition-all font-semibold"
+                >
+                  <span>@gksilver (Silver)</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -3915,31 +4138,38 @@ export default function App() {
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest text-indriya-lightgold mb-4">Jewellery Collections</h4>
               <ul className="space-y-2 text-xs text-gray-300">
-                <li><button onClick={() => { setSelectedCategory('necklaces'); setCurrentPage('catalog'); }} className="hover:text-white">Gold Chokers & Haars</button></li>
+                <li><button onClick={() => { setSelectedCategory('necklaces'); setCurrentPage('catalog'); }} className="hover:text-white">Gold Chokers &amp; Haars</button></li>
                 <li><button onClick={() => { setSelectedCategory('bangles'); setCurrentPage('catalog'); }} className="hover:text-white">Deccan Antique Kadas</button></li>
                 <li><button onClick={() => { setSelectedCategory('bridal'); setCurrentPage('catalog'); }} className="hover:text-white">Muhurtham Bridal Sets</button></li>
-                <li><button onClick={() => { setSelectedCategory('silver'); setCurrentPage('catalog'); }} className="hover:text-white">925 Silver Pooja Articles</button></li>
+                <li><button onClick={() => { setSelectedCategory('silver'); setCurrentPage('catalog'); }} className="hover:text-white">925 Silver Pooja Articles (@gksilver)</button></li>
                 <li><button onClick={() => { setSelectedCategory('coins'); setCurrentPage('catalog'); }} className="hover:text-white">24KT Gold Bullion Coins</button></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest text-indriya-lightgold mb-4">Sai Promises</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-indriya-lightgold mb-4">The GKJ Promises</h4>
               <ul className="space-y-2 text-xs text-gray-300">
-                <li>✓ 100% BIS Hallmarked with HUID</li>
-                <li>✓ 0% Deduction Old Gold Exchange</li>
-                <li>✓ Live Daily IBJA Benchmark Pricing</li>
-                <li>✓ Fully Insured Global Shipping</li>
-                <li>✓ Lifetime Free Cleaning & Polishing</li>
+                <li>✓ 100% BIS 916 Hallmarked Gold with HUID</li>
+                <li>✓ Custom Bridal &amp; Beads Jewellery Designs</li>
+                <li>✓ 0% Deduction on Old Gold Exchange</li>
+                <li>✓ Transparent Daily Live Benchmark Pricing</li>
+                <li>✓ Pure 925 Silver Articles via @gksilver</li>
               </ul>
             </div>
 
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-widest text-indriya-lightgold mb-4">Concierge & Visit</h4>
-              <p className="text-xs text-gray-300 mb-3">Book an exclusive private salon consultation at our Saidabad flagship.</p>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-indriya-lightgold mb-4">Concierge &amp; Visit</h4>
+              <p className="text-xs text-gray-300 mb-3">Book an exclusive private consultation at our Siddipet showroom.</p>
+              <a
+                href="tel:+919030033552"
+                className="w-full py-2.5 px-4 bg-indriya-gold hover:bg-indriya-brightgold text-[#0A2240] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 mb-2"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call +91 90300 33552</span>
+              </a>
               <button
                 onClick={() => setIsAppointmentOpen(true)}
-                className="w-full py-2.5 px-4 bg-indriya-gold hover:bg-indriya-brightgold text-[#0A2240] font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md"
+                className="w-full py-2.5 px-4 bg-white/10 hover:bg-white/20 text-indriya-lightgold font-bold text-xs uppercase tracking-wider rounded-xl transition-all border border-indriya-gold/40"
               >
                 Book VIP Appointment
               </button>
@@ -4234,7 +4464,7 @@ export default function App() {
                   className="w-full px-3 py-2 border rounded-xl bg-white"
                 >
                   <option value="insured_delivery">Insured Valuables Courier Delivery (Pan-India)</option>
-                  <option value="store_pickup">Direct Pickup at Saidabad Main Road Showroom</option>
+                  <option value="store_pickup">Direct Pickup at Siddipet Showroom</option>
                 </select>
               </div>
               <div className="pt-2">
@@ -4261,7 +4491,7 @@ export default function App() {
             <button onClick={() => setIsAppointmentOpen(false)} className="absolute top-5 right-5 p-2 rounded-full hover:bg-gray-100 text-gray-500">
               <X className="w-5 h-5" />
             </button>
-            <span className="text-[10px] font-bold text-indriya-gold tracking-widest uppercase">SAIDABAD FLAGSHIP</span>
+            <span className="text-[10px] font-bold text-indriya-gold tracking-widest uppercase">SIDDIPET SHOWROOM</span>
             <h3 className="font-serif text-xl font-bold text-indriya-navy mt-1">Book VIP Appointment</h3>
             <p className="text-xs text-gray-500 mt-1 mb-4">Enjoy a private lounge consultation with our jewellery curators.</p>
             <form onSubmit={(e) => {
@@ -4868,20 +5098,20 @@ export default function App() {
 
             <h3 className="font-serif text-xl font-bold text-indriya-navy">Direct Concierge Line</h3>
             <p className="text-xs text-gray-500 mt-1 mb-5">
-              Speak directly with our senior jewellery curators at the Saidabad flagship.
+              Speak directly with our senior jewellery curators at our Siddipet showroom.
             </p>
 
             <div className="space-y-3">
               <a
-                href="tel:+919177775151"
+                href="tel:+919030033552"
                 className="w-full py-3 bg-[#E05326] hover:bg-[#C8451B] text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-all"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call +91 91777 75151</span>
+                <span>Call +91 90300 33552</span>
               </a>
 
               <a
-                href="https://wa.me/919177775151?text=Hello%20Sai%20Jewellers,%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection."
+                href="https://wa.me/919030033552?text=Hello%20Gattu%20Krishna%20Murthy%20Jewellers,%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection."
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-all"
@@ -4919,7 +5149,7 @@ export default function App() {
               FLAGSHIP SHOWROOM
             </span>
             <h3 className="font-serif text-2xl font-bold text-indriya-navy mt-1">
-              Sai Jewellers Hyderabad
+              Gattu Krishna Murthy Jewellers Siddipet
             </h3>
 
             <div className="mt-5 space-y-4 text-xs">
@@ -4927,8 +5157,8 @@ export default function App() {
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-5 h-5 text-indriya-crimson flex-shrink-0 mt-0.5" />
                   <div>
-                    <h5 className="font-bold text-gray-900 text-sm">Saidabad Main Road Flagship</h5>
-                    <p className="text-gray-600 mt-0.5">16-1-524/3 & 4, Saidabad Main Road, Hyderabad, Telangana - 500059</p>
+                    <h5 className="font-bold text-gray-900 text-sm">Siddipet Flagship Showroom</h5>
+                    <p className="text-gray-600 mt-0.5">Paripally Street / Kaman Road, Siddipet, Telangana - 502103</p>
                   </div>
                 </div>
 
@@ -4939,13 +5169,13 @@ export default function App() {
 
                 <div className="flex items-center gap-2.5 text-gray-600">
                   <Phone className="w-4 h-4 text-indriya-gold" />
-                  <span>Phone / Concierge: <strong>+91 91777 75151</strong></span>
+                  <span>Phone / Concierge: <strong>+91 90300 33552</strong></span>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <a
-                  href="https://maps.google.com/?q=Sai+Jewellers+Saidabad+Hyderabad"
+                  href="https://maps.google.com/?q=Gattu+Krishna+Murthy+Jewellers+Siddipet"
                   target="_blank"
                   rel="noreferrer"
                   className="py-3 bg-indriya-navy hover:bg-[#07192f] text-indriya-lightgold font-bold rounded-xl text-center flex items-center justify-center gap-1.5 shadow-md"
